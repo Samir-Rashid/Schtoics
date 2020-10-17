@@ -1,11 +1,9 @@
 import tkinter as tk
 import tkinter.messagebox, tkinter.filedialog, tkinter.font
 from tkmacosx import Button
-from PIL import Image, ImageTk
 from runprogram import mainFunction
 import time
 import os
-# import main
 
 BLUE='#13223a'
 YELLOW='#dbb91f'
@@ -52,10 +50,10 @@ def getDropdownValue(var):
 	print("var: ", value)
 	return value
 
-# Place Logo and title TODO! Doesnt work!
-logo = Image.open('./cal.jpeg') # seems to only work with jpg
-tklogo = ImageTk.PhotoImage(logo)
-size = logo.size
+# Place Logo and title TODO! Doesnt work! Removed to minimize executable size
+# logo = Image.open('./cal.jpeg') # seems to only work with jpg
+# tklogo = ImageTk.PhotoImage(logo)
+# size = logo.size
 # title.create_image(30, 30, anchor='center', image=tklogo) # removed logo for aesthetic purposes
 
 var = tk.StringVar()
@@ -75,7 +73,7 @@ year.set("2020")
 quarter.set("1") #TODO: get based on the system current date and times. also autogenerate the years options based on date.
 
 dropdownFont = tk.font.Font(family="Myriad Pro", size=20)
-yearDropdown = tk.OptionMenu(frame, year, "2020", "2", "3") 
+yearDropdown = tk.OptionMenu(frame, year, "2020", "2021", "2022") 
 yearDropdown.config(bg = BLUE, width=20, font=dropdownFont)
 menu = root.nametowidget(yearDropdown.menuname)
 menu.config(font=dropdownFont)
